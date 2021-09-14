@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://myaviationstuff.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://myaviationstuff.com/" rel="alternate" type="text/html" /><updated>2021-09-14T10:00:41+02:00</updated><id>https://myaviationstuff.com/feed.xml</id><title type="html">Aviation Store</title><subtitle>Aviation Store is all about aviation style, bringing together outstanding products.</subtitle><author><name>{&quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Linkedin&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/company/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitLab&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-gitlab&quot;}, {&quot;label&quot;=&gt;&quot;Youtube&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/channel/UCCJGCwszCKYYy43s0g7II0A&quot;}, {&quot;label&quot;=&gt;&quot;Pinterest&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-pinterest&quot;, &quot;url&quot;=&gt;&quot;https://www.pinterest.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://www.instagram.com/cfd.streamline&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/CfdStreamline&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/CFD-Streamline-102236005421147/&quot;}, {&quot;label&quot;=&gt;&quot;Buymeacoffee&quot;, &quot;icon&quot;=&gt;&quot;fas fa-coffee&quot;, &quot;url&quot;=&gt;&quot;https://www.buymeacoffee.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Paypal&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-paypal&quot;, &quot;url&quot;=&gt;&quot;https://www.paypal.me/cfdstreamline&quot;}]}</name></author><entry><title type="html">How to install SU2 in MPI mode on Linux</title><link href="https://myaviationstuff.com/howto/How_to_install_su2/" rel="alternate" type="text/html" title="How to install SU2 in MPI mode on Linux" /><published>2020-06-04T00:00:00+02:00</published><updated>2020-06-04T00:00:00+02:00</updated><id>https://myaviationstuff.com/howto/How_to_install_su2</id><content type="html" xml:base="https://myaviationstuff.com/howto/How_to_install_su2/">&lt;h2 id=&quot;pre-requisite-installations-installations&quot;&gt;Pre-requisite installations installations&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install swig&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install &lt;a href=&quot;/posts/2020-06-05_How_to_Install_MPICH/&quot;&gt;MPICH&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install MPI for Python (&lt;a href=&quot;/posts/2020-06-05_How_to_Install_mpi4py/&quot;&gt;mpi4py&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It is not needed to install Meson, Ninja, CoDiPack and MeDiPack. SU2 installation process does that for you and ensures the correct versions.
+ &lt;script async=&quot;&quot; src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7211504142101622&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-7211504142101622&quot; data-ad-slot=&quot;1211975591&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+  (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure you are using bash.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
+ &lt;span class=&quot;c&quot;&gt;# if it is not bash, command: bash&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a folder for mpich&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /home/you/su2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download to that folder the latest stable source code version of su2 from: &lt;a href=&quot;https://su2code.github.io/download.html&quot;&gt;https://su2code.github.io/download.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unzip the file&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; unzip su2code...zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;script async=&quot;&quot; src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7211504142101622&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+    &lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-7211504142101622&quot; data-ad-slot=&quot;1211975591&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+  (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create 2 other folders&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /home/you/su2/build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the unziped su2 source code folder and run mason&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ./meson.py build &lt;span class=&quot;nt&quot;&gt;-Denable-autodiff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/you/su2/build
+ &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/you/su2/su2code...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Compile with ninja&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ./ninja &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; build &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://su2code.github.io/docs_v7/Build-SU2-Linux-MacOS/&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://su2code.github.io/docs_v7/SU2-Windows/&quot;&gt;Install on Windows&lt;/a&gt;&lt;/p&gt;</content><author><name>{&quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Linkedin&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/company/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitLab&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-gitlab&quot;}, {&quot;label&quot;=&gt;&quot;Youtube&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/channel/UCCJGCwszCKYYy43s0g7II0A&quot;}, {&quot;label&quot;=&gt;&quot;Pinterest&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-pinterest&quot;, &quot;url&quot;=&gt;&quot;https://www.pinterest.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://www.instagram.com/cfd.streamline&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/CfdStreamline&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/CFD-Streamline-102236005421147/&quot;}, {&quot;label&quot;=&gt;&quot;Buymeacoffee&quot;, &quot;icon&quot;=&gt;&quot;fas fa-coffee&quot;, &quot;url&quot;=&gt;&quot;https://www.buymeacoffee.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Paypal&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-paypal&quot;, &quot;url&quot;=&gt;&quot;https://www.paypal.me/cfdstreamline&quot;}]}</name></author><category term="howto" /><summary type="html">SU2 is a renowned CFD solver developed as an open-source code, in an initiative of the Stanford University. This tutorial guides the user through the process of installing SU2 in MPI mode in their windows or linux machines.</summary></entry><entry><title type="html">How to install MPICH</title><link href="https://myaviationstuff.com/howto/How_to_Install_MPICH/" rel="alternate" type="text/html" title="How to install MPICH" /><published>2020-06-04T00:00:00+02:00</published><updated>2020-06-04T00:00:00+02:00</updated><id>https://myaviationstuff.com/howto/How_to_Install_MPICH</id><content type="html" xml:base="https://myaviationstuff.com/howto/How_to_Install_MPICH/">&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure you are using bash.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a folder for mpich&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /home/you/mpich
+ &lt;span class=&quot;c&quot;&gt;# If it is not bash, command: bash&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;script async=&quot;&quot; src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7211504142101622&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+    &lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-7211504142101622&quot; data-ad-slot=&quot;1211975591&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+  (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download to that folder the latest stable version of mpich from: &lt;a href=&quot;https://www.mpich.org/downloads/&quot;&gt;https://www.mpich.org/downloads/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unpack the tar file that you just downloaded, mpich-x-y-z.tar.gz, where x-y-z is the version&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xfz mpich-x-y-z.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create 2 other folders&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /home/you/mpich/build
+ &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /home/you/mpich/mpich-install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the build directory and run the configuration script.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/you/mpich/build ../mpich-x-y-z/configure &lt;span class=&quot;nt&quot;&gt;--with-device&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ch4:ofi &lt;span class=&quot;nt&quot;&gt;-prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/you/mpich/mpich-install 2&amp;gt;&amp;amp;1 | &lt;span class=&quot;nb&quot;&gt;tee &lt;/span&gt;c.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Build mpich. Run command and go for a coffee:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; make 2&amp;gt;&amp;amp;1 | &lt;span class=&quot;nb&quot;&gt;tee &lt;/span&gt;m.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;script async=&quot;&quot; src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7211504142101622&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+    &lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-7211504142101622&quot; data-ad-slot=&quot;1211975591&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+  (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install MPICH.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; make &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2&amp;gt;&amp;amp;1 | &lt;span class=&quot;nb&quot;&gt;tee &lt;/span&gt;mi.txt	
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the bin subdirectory of the installation directory to your path:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/you/mpich/mpich-install/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check if the installation went well:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;which mpicc
+which mpiexec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test mpi in your machine by using the example file that the building process creates. That simple program computes the value of PI. If your machine has NC cores, then:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mpiexe &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; NC ./examples/cpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mpich.org/static/downloads/3.4.2/mpich-3.4.2-installguide.pdf&quot; target=&quot;_blank&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt;</content><author><name>{&quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Linkedin&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/company/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitLab&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-gitlab&quot;}, {&quot;label&quot;=&gt;&quot;Youtube&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/channel/UCCJGCwszCKYYy43s0g7II0A&quot;}, {&quot;label&quot;=&gt;&quot;Pinterest&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-pinterest&quot;, &quot;url&quot;=&gt;&quot;https://www.pinterest.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://www.instagram.com/cfd.streamline&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/CfdStreamline&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/CFD-Streamline-102236005421147/&quot;}, {&quot;label&quot;=&gt;&quot;Buymeacoffee&quot;, &quot;icon&quot;=&gt;&quot;fas fa-coffee&quot;, &quot;url&quot;=&gt;&quot;https://www.buymeacoffee.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Paypal&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-paypal&quot;, &quot;url&quot;=&gt;&quot;https://www.paypal.me/cfdstreamline&quot;}]}</name></author><category term="howto" /><summary type="html">Many software use MPICH as part of their parallel processes, including SU2. This tutorial guides the user through the process of installing MPICH in their windows or linux machines.</summary></entry><entry><title type="html">How to install mpi4py</title><link href="https://myaviationstuff.com/howto/How_to_Install_mpi4py/" rel="alternate" type="text/html" title="How to install mpi4py" /><published>2020-06-04T00:00:00+02:00</published><updated>2020-06-04T00:00:00+02:00</updated><id>https://myaviationstuff.com/howto/How_to_Install_mpi4py</id><content type="html" xml:base="https://myaviationstuff.com/howto/How_to_Install_mpi4py/">&lt;p&gt;MPI for Python enables MPI usage for the Python language, allowing programmers to write codes that leverage multiple processor computing systems.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;In a bash terminal, sudo your user:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;su
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure you have Python 3 developer installed:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python3-devel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;script async=&quot;&quot; src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7211504142101622&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+    &lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-7211504142101622&quot; data-ad-slot=&quot;1211975591&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+  (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you don’t have pip installed, install it with:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;easy_install pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finally, install mpi4py.&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;mpi4py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>{&quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Linkedin&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-linkedin&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/company/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;GitLab&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-gitlab&quot;}, {&quot;label&quot;=&gt;&quot;Youtube&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-youtube&quot;, &quot;url&quot;=&gt;&quot;https://www.youtube.com/channel/UCCJGCwszCKYYy43s0g7II0A&quot;}, {&quot;label&quot;=&gt;&quot;Pinterest&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-pinterest&quot;, &quot;url&quot;=&gt;&quot;https://www.pinterest.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;, &quot;url&quot;=&gt;&quot;https://www.instagram.com/cfd.streamline&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;, &quot;url&quot;=&gt;&quot;https://twitter.com/CfdStreamline&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;, &quot;url&quot;=&gt;&quot;https://www.facebook.com/CFD-Streamline-102236005421147/&quot;}, {&quot;label&quot;=&gt;&quot;Buymeacoffee&quot;, &quot;icon&quot;=&gt;&quot;fas fa-coffee&quot;, &quot;url&quot;=&gt;&quot;https://www.buymeacoffee.com/cfdstreamline&quot;}, {&quot;label&quot;=&gt;&quot;Paypal&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-paypal&quot;, &quot;url&quot;=&gt;&quot;https://www.paypal.me/cfdstreamline&quot;}]}</name></author><category term="howto" /><summary type="html">Many software use mpi4py (Python) as part of their parallel processes, including SU2. This tutorial guides the user through the process of installing mpi4py in their windows or linux machines.</summary></entry></feed>
